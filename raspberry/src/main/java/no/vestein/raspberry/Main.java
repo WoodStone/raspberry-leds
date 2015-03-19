@@ -2,19 +2,18 @@ package no.vestein.raspberry;
 
 import java.io.Console;
 
-import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.RaspiPin;
 
 public class Main {
 
-	static final GpioController gpio = GpioFactory.getInstance();
-	static LedMap leds = LedMap.getInstance();
+	private static LedMap leds = LedMap.getInstance();
 	
 	public static void main(String[] args) {
 		
 		leds.add("r", RaspiPin.GPIO_06);
 		leds.add("g", RaspiPin.GPIO_05);
+		leds.add("w", RaspiPin.GPIO_04);
 		
 		Console console = System.console();
 		
@@ -27,7 +26,7 @@ public class Main {
 			checkCommand(input);
 		}
 		
-		gpio.shutdown();
+		GpioFactory.getInstance().shutdown();
 		System.exit(0);
 	}
 	

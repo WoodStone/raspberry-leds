@@ -17,7 +17,7 @@ public class LedMap {
 	}
 	
 	private LedMap() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public void add(String key, Pin pin) {
