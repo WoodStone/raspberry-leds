@@ -27,6 +27,10 @@ public class LedMap {
 		}
 	}
 	
+	public void remove(String key) {
+		map.remove(key);
+	}
+	
 	public Led getLed(String key) {
 		return map.get(key);
 	}
